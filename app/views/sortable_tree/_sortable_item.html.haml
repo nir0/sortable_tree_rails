@@ -1,0 +1,11 @@
+%li{id: "item_#{item.id}"}
+  .item
+    %span
+      =item.name
+    .cell.right.controls
+      = render options[:controls_partial], item: item
+  -if item.children.size > 0
+    %ul
+      -item.children.map do |child|
+        =render 'sortable_tree/sortable_item', item: child, options: options
+  /= sortable_tree_render_nested_groups(children, options.merge({list_tag: :ul, element_class: 'item'}))

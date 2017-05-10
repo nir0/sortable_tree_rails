@@ -18,8 +18,7 @@ module SortableTreeController
           options[:tree] = true
           options[:sorting_attribute] ||= 'pos'
           options[:parent_method] ||= 'parent'
-
-          records = params[:cat].inject({}) do |res, (resource, parent_resource)|
+          records = params[:item].to_unsafe_h.inject({}) do |res, (resource, parent_resource)|
             res[resource_class.find(resource)] = resource_class.find(parent_resource) rescue nil
             res
           end
