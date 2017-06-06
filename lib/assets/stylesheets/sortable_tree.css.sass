@@ -4,10 +4,10 @@ $cRowSelected: #d9e4ec
 $cRowError: rgb(255, 87, 87)
 
 .ui-sortable > *
-  cursor: move
+  //cursor: move
 
 .disclose
-  cursor: pointer
+  //cursor: pointer
   width: 10px
   display: none
 
@@ -26,7 +26,7 @@ ol.sortable_tree
     list-style-type: none
 
     li
-      cursor: default !important
+      //cursor: default !important
 
       &.placeholder
         background: lighten($cOddRowBackground, 10%)
@@ -59,12 +59,12 @@ ol.sortable_tree
 
         &:hover
           background-color: $cRowSelected
-          cursor: move
 
         .cell
           margin: 0
           padding: 10px 12px 8px 12px
-
+        .handle
+          cursor: move
         h3.cell
           font-size: 16px
           line-height: 14px
